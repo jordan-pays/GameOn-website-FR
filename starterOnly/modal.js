@@ -7,6 +7,8 @@ function editNav() {
   }
 }
 
+const emailRegExp = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g
+
 // DOM Elements
 const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
@@ -20,4 +22,19 @@ function launchModal() {
   modalbg.style.display = "block";
 }
 
+function closeModal(){
+  modalbg.style.display = "none";
+}
+//Checks if the email entered is valid
+function isValidEmail(){
+  const email = document.getElementById("email").value;
+  if(emailRegExp.test(email)){
+    return true
+  }else{
+    return false
+  }
+}
 
+function valide(){
+  const isEmail  = isValidEmail()
+}
