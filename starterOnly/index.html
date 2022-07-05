@@ -53,13 +53,15 @@
 
       <div class="bground">
         <div class="content">
-          <span onpress="closeModal()" class="close"></span>
+          <button onclick="closeModal()">
+          <span  class="close"></a>
+          </button>
           <div class="modal-body">
             <form
               name="reserve"
               action="index.html"
               method="get"
-              onsubmit="return validate();"
+              onsubmit="validate();"
             >
               <div
                 class="formData">
