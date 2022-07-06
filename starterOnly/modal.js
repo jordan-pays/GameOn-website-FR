@@ -13,6 +13,7 @@ const emailRegExp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
 const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
+const first_input = document.getElementById("first")
 
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
@@ -20,11 +21,15 @@ modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 // launch modal form
 function launchModal() {
   modalbg.style.display = "block";
+  formData.forEach(element => {
+    element.setAttribute('data-error-visible', 'true');
+  });
 }
 
 function closeModal() {
   modalbg.style.display = "none";
 }
+
 //Checks if the email entered is valid
 function isValidEmail() {
   const email = document.getElementById("email").value;
@@ -35,6 +40,7 @@ function isValidEmail() {
   }
 }
 
+//Checks if the location has been choice
 function isValidLocation() {
   const list_location = document.getElementsByName("location");
   let isLocate = false;
@@ -51,6 +57,16 @@ function isValidLocation() {
   }
 }
 
+first_input.addEventListener("focusout",(event) => {
+  if(event.target.value == "" || event.target.value.length<2 ){
+    first_input.parentElement.setAttribute('data-error-visible', 'true');
+    first_input.parentElement.setAttribute('data-error', 'Votre prénom doit contenir au moins 2 lettres');
+  }else{
+    first_input.parentElement.setAttribute('data-error-visible', 'false');
+  }
+})
+
+//Checks if the cu is check
 function isValidCu() {
   const cu = document.getElementById("checkbox1");
   return cu.checked
