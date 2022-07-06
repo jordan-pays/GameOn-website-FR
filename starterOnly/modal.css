@@ -234,7 +234,8 @@ input:invalid{
   display: block;
   margin-top: 7px;
   margin-bottom: 7px;
-  text-align: right;
+  margin-left: 10px;
+  text-align: left;
   line-height: 0.3;
   opacity: 0;
   transition: 0.3s;
@@ -454,6 +455,14 @@ input[data-error]::after {
   right: -80px;
   top: 0;
 } */
+
+.valid_text {
+  font-size: 2.4rem;
+  font-weight: normal;
+  width: 69%;
+  white-space: normal;
+  text-align: center;
+}
 
 .hero-content > * {
   position: relative;
