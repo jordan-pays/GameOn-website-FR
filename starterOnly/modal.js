@@ -129,7 +129,7 @@ function isValidDate() {
 function isValidQuantity() {
   if(quantity_input.value==""){
     quantity_input.parentElement.setAttribute('data-error-visible', 'true');
-    quantity_input.parentElement.setAttribute('data-error', 'Veuillez renseigner une date de naissance');
+    quantity_input.parentElement.setAttribute('data-error', 'Veuillez renseigner une valeur');
     return false
   }else{
     quantity_input.parentElement.setAttribute('data-error-visible', 'false');
