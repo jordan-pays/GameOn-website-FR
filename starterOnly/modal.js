@@ -65,6 +65,7 @@ function closeModal() {
 
 // Chek the first name
 function isValidFirst (){
+  debugger
   if(first_input.value == "" || first_input.value.length<2 ){
     first_input.parentElement.setAttribute('data-error-visible', 'true');
     first_input.parentElement.setAttribute('data-error', 'Votre prénom doit contenir au moins 2 lettres');
