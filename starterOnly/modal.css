@@ -41,7 +41,7 @@ img {
     float: left;
 }
 .main-navbar {
-    float: right;
+  float: right;
 }
 .topnav a {
   float: left;
@@ -74,10 +74,24 @@ img {
   color:#ff0000;
 }
 
+.topnav .icon:hover{
+  background-color:transparent;
+  color:#ff0000;
+  border-radius: 0px;
+  text-decoration: none;
+}
+
 @media screen and (max-width: 768px) {
   .topnav a {display: none;}
   .topnav a.icon {
     display: block;
+  }
+  .main-navbar{
+    position: absolute;
+    top: 0px;
+    z-index: 100;
+    right: 0px;
+    background-color: white;
   }
 }
 
@@ -91,7 +105,6 @@ img {
 }
 
 @media screen and (max-width: 768px) {
-  .topnav.responsive {position: relative;}
   .topnav.responsive .icon {
     position: absolute;
     right: 0;
@@ -174,7 +187,7 @@ main {
 .bground {
   display: none;
   position: fixed;
-  z-index: 1;
+  z-index: 300;
   left: 0;
   top: 0;
   height: 100%;
