@@ -142,6 +142,10 @@ main {
 
 }
 
+.button_hidden{
+  border-width: 0px;
+}
+
 .modal-btn {
   font-size: 145%;
   background: #fe142f;
