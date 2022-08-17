@@ -217,7 +217,10 @@ date_input.addEventListener("change", isValidDate)
 quantity_input.addEventListener("change", isValidQuantity)
 cu_check.addEventListener("change", isValidCu)
 
-
+//add listener for each city  
+location_check.forEach(city=>{
+  city.addEventListener("change",isValidLocation)
+})
 /* Navigation part */
 
 function clickNav(id) {
