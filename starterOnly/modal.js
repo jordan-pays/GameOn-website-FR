@@ -60,6 +60,7 @@ function launchModal() {
   isValidDate()
   isValidCu()
   isValidQuantity()
+  isValidLocation()
 }
 
 // close modal form
@@ -165,8 +166,13 @@ function isValidLocation() {
     i++
   }
   if (isLocate) {
+    location_check[location_check.length -1].parentElement.setAttribute('data-error-visible', 'false');
     return true
   } else {
+    //this part allows to put in red the frame of the input and to display a text below the input
+    location_check[location_check.length -1].parentElement.setAttribute('data-error-visible', 'true');
+    //this part allows you to put the desired text below the input
+    location_check[location_check.length -1].parentElement.setAttribute('data-error', 'Veuillez choisir une ville');
     return false
   }
 }
@@ -189,7 +195,8 @@ function isValidCu() {
 }
 
 //validate the form and display the thank you text only if all the conditioning functions on the inputs return true 
-function validate() {
+function validate(event) {
+  event.preventDefault()
   if (isValidFirst() && isValidLast() && isValidEmail() && isValidDate() && isValidQuantity() && isValidLocation() && isValidCu()) {
     //displays all children of formData
     formData.forEach(element => {
@@ -199,9 +206,6 @@ function validate() {
     document.getElementById("valid_div").innerHTML = '<h1 class="valid_text"> Merci pour votre inscription </h1>'
     document.getElementById("submit").value = "Fermer";
     document.getElementById("submit").addEventListener("click", closeModal)
-    return false
-  } else {
-    return false
   }
 }
 
