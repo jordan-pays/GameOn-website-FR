@@ -166,13 +166,13 @@ function isValidLocation() {
     i++
   }
   if (isLocate) {
-    location_check[location_check.length -1].parentElement.setAttribute('data-error-visible', 'false');
+    location_check[0].parentElement.setAttribute('data-error-visible', 'false');
     return true
   } else {
     //this part allows to put in red the frame of the input and to display a text below the input
-    location_check[location_check.length -1].parentElement.setAttribute('data-error-visible', 'true');
+    location_check[0].parentElement.setAttribute('data-error-visible', 'true');
     //this part allows you to put the desired text below the input
-    location_check[location_check.length -1].parentElement.setAttribute('data-error', 'Veuillez choisir une ville');
+    location_check[0].parentElement.setAttribute('data-error', 'Veuillez choisir une ville');
     return false
   }
 }
